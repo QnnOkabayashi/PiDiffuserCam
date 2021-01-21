@@ -1,0 +1,3 @@
+import picamera
+
+print("Success!")
