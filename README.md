@@ -3,44 +3,24 @@
 Quinn Okabayashi and Josh Vandervelde
 
 ___
-## Installing Raspberry Pi OS and enabling SSH
+## Installing Raspberry Pi OS and enabling SSH via WiFi
 1. Install the [Raspberry Pi Imager](https://www.raspberrypi.org/documentation/installation/installing-images/)
 
-2. Connect an unused microSD card to your computer
+2. Connect an unused micro SD card to your computer
 
-3. Follow the instructions in the Raspberry Pi Imager software
+3. Follow the instructions in the Raspberry Pi Imager software to flash the OS
 
     * OS: Select Raspberry Pi OS (other) > Raspberry Pi OS Lite (32-bit)
-    * SD Card: Selected the microSD card you plugged in
+    * SD Card: Select the micro SD card you plugged in
 
-4. Click "Write" and wait for the imager to finish flashing the OS
-
-5. Enable SSH on boot by creating an empty file called `ssh` with the following
+4. To enable SSH over WiFi, run the following command and follow the instructions
 ```
-touch /Volumes/boot/ssh
+bash -c "$(curl -s https://raw.githubusercontent.com/QnnOkabayashi/scripts/master/PiDiffuserCam/headless.sh)"
 ```
-
-6. The first step to enabling WiFi connection is to create a `wpa_supplicant.conf` file
-```
-touch /Volumes/boot/wpa_supplicant.conf
-```
-
-7. Then, open that text file and paste the following, substituting your network credentials
-
-    This step won't work if your network has a confirmation page.
-```
-country=US
-ctrl_interface=DIR=/var/run/wpa_supplicant GROUP=netdev
-update_config=1
-
-network={
-    scan_ssid=1
-    ssid="your_wifi_ssid"
-    psk="your_wifi_password"
-}
-```
-
-8. Once these files have been created, you can eject the microSD and insert it into the Raspberry Pi, and plug it into power
+This will:
+* Prompt you to select the boot drive (Select the same drive as in the previous step)
+* Prompt you to enter WiFi credentials
+* Write necessary files to enable SSH via WiFi
 
 ## Connecting via SSH
 1. When your Pi is powered on, open your terminal and enter the following
@@ -59,31 +39,15 @@ Are you sure you want to continue connecting (yes/no/[fingerprint])?
 
 4. To disconnect from the SSH, use the `exit` command
 
-## Installing project dependencies
-Since Git and PiCamera do not come installed in Raspberry Pi OS Lite, you must manually install them.
-
-1. Once connected via SSH, install Git and PiCamera with the following commands
+## Project setup
+Once connected via SSH, setup the project with the following command:
 ```
-$ sudo apt-get update
-$ sudo apt-get install git python3-picamera
+curl -s https://raw.githubusercontent.com/QnnOkabayashi/scripts/master/PiDiffuserCam/setup.sh | bash
 ```
-
-2. Verify that Git was installed with the following command, which should display the version
-```
-$ git --version
-```
-
-3. Verify that PiCamera was installed with the following command, which should produce no output
-```
-$ python3 -c "import picamera"
-```
-
-## Cloning the project repo and setup
-Once connected via SSH, clone the project repo with the following command from the home directory
-```
-$ git clone https://github.com/QnnOkabayashi/PiDiffuserCam.git
-```
-
+This will:
+1. Update the package manager
+2. Install Git and PiCamera, required dependencies
+3. Clone the project repo code to the home directory
 
 ## Copying captured images to local machine via SSH
 Enter the following command from the terminal of the machine you want to copy images to, substituting your local destination file path
