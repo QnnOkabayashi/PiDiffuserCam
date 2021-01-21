@@ -1,4 +1,5 @@
-import os, picamera.PiCamera
+import os
+from picamera import PiCamera
 from datetime import datetime
 
 # Create '/captures' for storing raw images if it doesn't already exist
