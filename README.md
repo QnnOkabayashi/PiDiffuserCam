@@ -79,18 +79,15 @@ $ python3 -c "import picamera"
 ```
 
 ## Cloning the project repo and setup
-1. Once connected via SSH, clone the project repo with the following command from the home directory
+Once connected via SSH, clone the project repo with the following command from the home directory
 ```
 $ git clone https://github.com/QnnOkabayashi/PiDiffuserCam.git
 ```
 
-2. Run the following, which should output "`Success!`" (This is basically useless right now)
-```
-$ python3 PiDiffuserCam/raspberrypi/main.py
-```
 
 ## Copying captured images to local machine via SSH
 Enter the following command from the terminal of the machine you want to copy images to, substituting your local destination file path
 ```
 $ scp -rp pi@raspberrypi.local:/home/pi/PiDiffuserCam/raspberrypi/captures /local/destination/path/
 ```
+Note that this command will fail if no images have been captured
