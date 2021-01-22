@@ -41,14 +41,12 @@ Are you sure you want to continue connecting (yes/no/[fingerprint])?
 ## Initialize project code
 Once connected via SSH, setup the project with the following command:
 ```
-$ bash < <(curl -s https://raw.githubusercontent.com/QnnOkabayashi/scripts/master/PiDiffuserCam/setup.sh)
+$ source <(curl -s https://raw.githubusercontent.com/QnnOkabayashi/scripts/master/PiDiffuserCam/setup.sh)
 ```
 This will:
 1. Update the package manager
 2. Install Git and PiCamera, required dependencies
 3. Clone the project repo code to the home directory
-
-> If it doesn't clone the repo, run the command again
 
 ## Copying captured images to local machine via SSH
 Enter the following command from the terminal of the machine you want to copy images to, substituting your local destination file path
