@@ -15,11 +15,11 @@ ___
     [Source code](https://github.com/QnnOkabayashi/scripts/blob/master/RaspberryPi/setup_headless.py)
 
     This will:
-    * Prompt you to select a drive to format
-    * Flash Raspberry Pi OS Lite (32-bit) to it
-    * Prompt you for WiFi credentials
-    * Enable SSH via WiFi for the Pi
-    * Safely eject the drive
+    1. Prompt you to select a drive to format
+    2. Flash Raspberry Pi OS Lite (32-bit) to it
+    3. Prompt you for WiFi credentials
+    4. Enable SSH via WiFi for the Pi
+    5. Safely eject the drive
 
 
 3. Insert your SD card in the Raspberry Pi and connect to power
