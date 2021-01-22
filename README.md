@@ -3,26 +3,23 @@
 Quinn Okabayashi and Josh Vandervelde
 
 ___
-## Installing Raspberry Pi OS and enabling SSH via WiFi
-1. Install the [Raspberry Pi Imager](https://www.raspberrypi.org/documentation/installation/installing-images/)
+## Setting up your Raspberry Pi for SSH
+1. Connect an unused micro SD card to your Mac
 
-2. Connect an unused micro SD card to your computer
+2. Enter the following
+    ```
+    python3 -c "import urllib.request; exec(urllib.request.urlopen('https://raw.githubusercontent.com/QnnOkabayashi/scripts/master/PiDiffuserCam/headless.py').read())"
+    ```
+    This will:
+    * Prompt you to select a drive to format
+    * Flash Raspberry Pi OS Lite (32-bit) to it
+    * Prompt you for WiFi credentials
+    * Enable SSH via WiFi for the Pi
+    * Safely eject the drive
 
-3. Follow the instructions in the Raspberry Pi Imager software to flash the OS
+    > WARNING: You should always verify that scripts from URLs are safe before running! You can view the source code [here](https://github.com/QnnOkabayashi/scripts/blob/master/PiDiffuserCam/headless.py).
 
-    * OS: Select Raspberry Pi OS (other) > Raspberry Pi OS Lite (32-bit)
-    * SD Card: Select the micro SD card you plugged in
-
-4. This software ejects the drive, so you have to physically eject and insert the SD card again
-
-5. To enable SSH over WiFi, run the following command and follow the instructions
-```
-$ bash -c "$(curl -s https://raw.githubusercontent.com/QnnOkabayashi/scripts/master/PiDiffuserCam/headless.sh)"
-```
-This will:
-* Prompt you to select the boot drive (Select the same drive as in the previous step)
-* Prompt you to enter WiFi credentials
-* Write necessary files to enable SSH via WiFi
+3. Insert your SD card in the Raspberry Pi and connect to power
 
 ## Connecting via SSH
 1. When your Pi is powered on, open your terminal and enter the following
@@ -41,7 +38,7 @@ Are you sure you want to continue connecting (yes/no/[fingerprint])?
 
 4. To disconnect from the SSH, use the `exit` command
 
-## Project setup
+## Initialize project code
 Once connected via SSH, setup the project with the following command:
 ```
 $ curl -s https://raw.githubusercontent.com/QnnOkabayashi/scripts/master/PiDiffuserCam/setup.sh | bash
