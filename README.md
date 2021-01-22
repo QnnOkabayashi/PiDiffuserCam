@@ -3,26 +3,25 @@
 Quinn Okabayashi and Josh Vandervelde
 
 ___
-## Setting up your Raspberry Pi for [headless](https://en.wikipedia.org/wiki/Headless_computer) operation
-1. Connect an unused micro SD card to your Mac
+## Setting up your Raspberry Pi for [headless](https://en.wikipedia.org/wiki/Headless_computer) operation (OSX only)
+Insert an unused micro SD card into your machine, and enter the following command:
 
-2. Enter the following
-    ```
-    $ python3 -c "import urllib.request; exec(urllib.request.urlopen('https://raw.githubusercontent.com/QnnOkabayashi/scripts/master/RaspberryPi/setup_headless.py').read())"
-    ```
-    > Warning: You should always verify that scripts from URLs are safe before running! Check out the source code below yourself.
+```
+$ python3 -c "import urllib.request; exec(urllib.request.urlopen('https://raw.githubusercontent.com/QnnOkabayashi/scripts/master/RaspberryPi/setup_headless.py').read())"
+```
 
-    [Source code](https://github.com/QnnOkabayashi/scripts/blob/master/RaspberryPi/setup_headless.py)
+> Warning: You should always verify that scripts from URLs are safe before running! Check out the source code below yourself.
 
-    This will:
-    * Prompt you to select a drive to format
-    * Flash Raspberry Pi OS Lite (32-bit) to it
-    * Prompt you for WiFi credentials
-    * Enable SSH via WiFi for the Pi
-    * Safely eject the drive
+[Source code](https://github.com/QnnOkabayashi/scripts/blob/master/RaspberryPi/setup_headless.py)
 
+This will:
+* Prompt you to select a drive to format
+* Flash Raspberry Pi OS Lite (32-bit) to it
+* Prompt you for WiFi credentials
+* Enable SSH via WiFi for the Pi
+* Safely eject the drive
 
-3. Insert your SD card in the Raspberry Pi and connect to power
+You may now remove the micro SD card and insert it into your Raspberry Pi.
 
 ## Connecting via SSH
 1. When your Pi is powered on, open your terminal and enter the following
@@ -57,8 +56,8 @@ This will:
 > Note: Sometimes this code doesn't do anything for reasons beyond me. If it doesn't work at first, wait a few minutes and try again.
 
 ## Copying captured images to local machine via SSH
-Enter the following command from the terminal of the machine you want to copy images to, substituting your local destination file path
+Enter the following command from the terminal of the machine you want to copy images to, substituting your local destination file path:
 ```
 $ scp -rp pi@raspberrypi.local:/home/pi/PiDiffuserCam/raspberrypi/captures /local/destination/path/
 ```
-Note that this command will fail if no images have been captured
+> Note: this command will fail if no images have been captured
