@@ -10,6 +10,10 @@ ___
     ```
     $ python3 -c "import urllib.request; exec(urllib.request.urlopen('https://raw.githubusercontent.com/QnnOkabayashi/scripts/master/RaspberryPi/setup_headless.py').read())"
     ```
+    > Warning: You should always verify that scripts from URLs are safe before running! Check out the source code below yourself.
+
+    [Source code](https://github.com/QnnOkabayashi/scripts/blob/master/RaspberryPi/setup_headless.py)
+
     This will:
     * Prompt you to select a drive to format
     * Flash Raspberry Pi OS Lite (32-bit) to it
@@ -17,7 +21,6 @@ ___
     * Enable SSH via WiFi for the Pi
     * Safely eject the drive
 
-    > WARNING: You should always verify that scripts from URLs are safe before running! You can view the source code [here](https://github.com/QnnOkabayashi/scripts/blob/master/RaspberryPi/setup_headless.py).
 
 3. Insert your SD card in the Raspberry Pi and connect to power
 
@@ -43,10 +46,15 @@ Once connected via SSH, setup the project with the following command:
 ```
 $ source <(curl -s https://raw.githubusercontent.com/QnnOkabayashi/scripts/master/PiDiffuserCam/setup.sh)
 ```
+[Source code](https://github.com/QnnOkabayashi/scripts/blob/master/PiDiffuserCam/setup.sh)
+
 This will:
 1. Update the package manager
 2. Install Git and PiCamera, required dependencies
 3. Clone the project repo code to the home directory
+4. Enable the camera module
+5. Reboot
+> Note: Sometimes this code doesn't do anything for reasons beyond me. If it doesn't work at first, wait a few minutes and try again.
 
 ## Copying captured images to local machine via SSH
 Enter the following command from the terminal of the machine you want to copy images to, substituting your local destination file path
