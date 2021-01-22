@@ -15,9 +15,10 @@ ___
 
     This will:
     * Update the package manager
-    * Install Git and PiCamera, required dependencies
+    * Install the required dependencies
     * Clone the project repo code to the home directory
-    * Enable the camera module
+    * Enable the PiCamera and RealVNC modules
+    * Configure your Pi to initialize a vncserver on startup
     * Reboot
     > Note: Sometimes this code doesn't do anything for reasons beyond me. If it doesn't work at first, wait a minute and try again.
 
