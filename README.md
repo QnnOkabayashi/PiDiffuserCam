@@ -15,16 +15,16 @@ $ source <(curl -s https://raw.githubusercontent.com/QnnOkabayashi/scripts/maste
 [Source code](https://github.com/QnnOkabayashi/scripts/blob/master/PiDiffuserCam/setup.sh)
 
 This will:
-* Update the package manager
-* Install Git and PiCamera, required dependencies
-* Clone the project repo code to the home directory
-* Enable the camera module
-* Reboot
-> Note: Sometimes this code doesn't do anything for reasons beyond me. If it doesn't work at first, wait a few minutes and try again.
+1. Update the package manager
+2. Install Git and PiCamera, required dependencies
+3. Clone the project repo code to the home directory
+4. Enable the camera module
+5. Reboot
+> Note: Sometimes this code doesn't do anything for reasons beyond me. If it doesn't work at first, wait a minute and try again.
 ___
 ## Copying captured images to local machine via SSH
-Enter the following command from the terminal of the machine you want to copy images to, substituting your local destination file path:
+Enter the following command from the terminal of the machine you want to copy images to, substituting your local destination path:
 ```
 $ scp -rp pi@raspberrypi.local:/home/pi/PiDiffuserCam/raspberrypi/captures /local/destination/path/
 ```
-> Note: this command will fail if no images have been captured
+> Note: This command will fail if no images have been captured
