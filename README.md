@@ -8,7 +8,7 @@ ___
 
 2. Enter the following
     ```
-    python3 -c "import urllib.request; exec(urllib.request.urlopen('https://raw.githubusercontent.com/QnnOkabayashi/scripts/master/PiDiffuserCam/headless.py').read())"
+    $ python3 -c "import urllib.request; exec(urllib.request.urlopen('https://raw.githubusercontent.com/QnnOkabayashi/scripts/master/PiDiffuserCam/headless.py').read())"
     ```
     This will:
     * Prompt you to select a drive to format
@@ -41,7 +41,7 @@ Are you sure you want to continue connecting (yes/no/[fingerprint])?
 ## Initialize project code
 Once connected via SSH, setup the project with the following command:
 ```
-$ curl -s https://raw.githubusercontent.com/QnnOkabayashi/scripts/master/PiDiffuserCam/setup.sh | bash
+$ bash < <(curl -s https://raw.githubusercontent.com/QnnOkabayashi/scripts/master/PiDiffuserCam/setup.sh)
 ```
 This will:
 1. Update the package manager
