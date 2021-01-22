@@ -3,12 +3,12 @@
 Quinn Okabayashi and Josh Vandervelde
 
 ___
-## Setting up your Raspberry Pi for SSH
+## Setting up your Raspberry Pi for [headless](https://en.wikipedia.org/wiki/Headless_computer) operation
 1. Connect an unused micro SD card to your Mac
 
 2. Enter the following
     ```
-    $ python3 -c "import urllib.request; exec(urllib.request.urlopen('https://raw.githubusercontent.com/QnnOkabayashi/scripts/master/PiDiffuserCam/headless.py').read())"
+    $ python3 -c "import urllib.request; exec(urllib.request.urlopen('https://raw.githubusercontent.com/QnnOkabayashi/scripts/master/RaspberryPi/setup_headless.py').read())"
     ```
     This will:
     * Prompt you to select a drive to format
@@ -17,7 +17,7 @@ ___
     * Enable SSH via WiFi for the Pi
     * Safely eject the drive
 
-    > WARNING: You should always verify that scripts from URLs are safe before running! You can view the source code [here](https://github.com/QnnOkabayashi/scripts/blob/master/PiDiffuserCam/headless.py).
+    > WARNING: You should always verify that scripts from URLs are safe before running! You can view the source code [here](https://github.com/QnnOkabayashi/scripts/blob/master/RaspberryPi/setup_headless.py).
 
 3. Insert your SD card in the Raspberry Pi and connect to power
 
