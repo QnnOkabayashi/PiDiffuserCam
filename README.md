@@ -15,11 +15,11 @@ ___
     [Source code](https://github.com/QnnOkabayashi/scripts/blob/master/RaspberryPi/setup_headless.py)
 
     This will:
-    1. Prompt you to select a drive to format
-    2. Flash Raspberry Pi OS Lite (32-bit) to it
-    3. Prompt you for WiFi credentials
-    4. Enable SSH via WiFi for the Pi
-    5. Safely eject the drive
+    * Prompt you to select a drive to format
+    * Flash Raspberry Pi OS Lite (32-bit) to it
+    * Prompt you for WiFi credentials
+    * Enable SSH via WiFi for the Pi
+    * Safely eject the drive
 
 
 3. Insert your SD card in the Raspberry Pi and connect to power
@@ -49,11 +49,11 @@ $ source <(curl -s https://raw.githubusercontent.com/QnnOkabayashi/scripts/maste
 [Source code](https://github.com/QnnOkabayashi/scripts/blob/master/PiDiffuserCam/setup.sh)
 
 This will:
-1. Update the package manager
-2. Install Git and PiCamera, required dependencies
-3. Clone the project repo code to the home directory
-4. Enable the camera module
-5. Reboot
+* Update the package manager
+* Install Git and PiCamera, required dependencies
+* Clone the project repo code to the home directory
+* Enable the camera module
+* Reboot
 > Note: Sometimes this code doesn't do anything for reasons beyond me. If it doesn't work at first, wait a few minutes and try again.
 
 ## Copying captured images to local machine via SSH
