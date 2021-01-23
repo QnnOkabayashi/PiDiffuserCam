@@ -9,12 +9,7 @@ if not os.path.isdir(captures_path):
 
 
 with PiCamera() as camera:
-    x = 180
-    y = 0
-    width = 540
-    height = 360
-
-    camera.start_preview(fullscreen=False, window=(x, y, width, height))
+    camera.start_preview()
     input("Press <enter> to stop")
     camera.stop_preview()
     # d = datetime.now()
