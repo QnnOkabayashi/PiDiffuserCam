@@ -7,11 +7,15 @@ captures_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'captur
 if not os.path.isdir(captures_path):
     os.mkdir(captures_path)
 
-# Do image capturing stuff here
 
 with PiCamera() as camera:
-    camera.start_preview()
-    input("Press any key to stop")
+    x = 180
+    y = 0
+    width = 540
+    height = 260
+
+    camera.start_preview(fullscreen=False, window=(x, y, width, height))
+    input("Press <enter> to stop")
     camera.stop_preview()
     # d = datetime.now()
     # label = f'{d.year}-{d.month}-{d.day} at {d.hour}.{d.minute}.{d.second}'
