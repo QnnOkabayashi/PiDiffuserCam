@@ -12,7 +12,7 @@ with PiCamera() as camera:
     x = 180
     y = 0
     width = 540
-    height = 260
+    height = 360
 
     camera.start_preview(fullscreen=False, window=(x, y, width, height))
     input("Press <enter> to stop")
