@@ -2,7 +2,7 @@
 
 Quinn Okabayashi and Josh Vandervelde
 ___
-## Configure your Raspberry Pi
+## Configure Software
 1. Follow the instructions [here](https://github.com/QnnOkabayashi/scripts/blob/master/HeadlessPi/README.md) for configuring your Raspberry Pi for headless mode and connecting via SSH.
 
 2. Once connected via SSH, setup the project with the following command:
@@ -18,9 +18,18 @@ ___
     * Install the required dependencies
     * Clone the project repo code to the home directory
     * Enable the PiCamera and RealVNC modules
-    * Display VNC server address for [VNC Viewer](https://www.realvnc.com/en/connect/download/viewer/)
+    * Display VNC server address
     * Reboot, enabling the VNC server
     > Note: Sometimes this code doesn't do anything for reasons beyond me. If it doesn't work at first, wait a minute and try again.
+
+3. On your local machine, install [VNC Viewer](https://www.realvnc.com/en/connect/download/viewer/).
+
+4. Open VNC Viewer and enter the VNC Server address the setup process displayed in step 2. This will open a window where the camera feed will display when we enable it.
+
+5. To start taking pictures, SSH into the Pi, navigate to `~/PiDiffuserCam/raspberrypi`, and enter:
+    ```
+    $ python3 main.py
+    ```
 
 ___
 ## Copying captured images to local machine via SSH
