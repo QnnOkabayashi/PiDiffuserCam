@@ -13,7 +13,7 @@ with PiCamera() as camera:
     while True:
         user_input = input('Press <enter> to take a picture, or q+<enter> to quit: ')
         if user_input == '':
-            label = datetime.now().strftime('%d/%m/%Y %H:%M:%S')
+            label = datetime.now().strftime('%m:%d:%Y-%H:%M:%S')
             camera.capture(os.path.join(captures_path, f'{label}.png'))
         elif user_input == 'q':
             break
