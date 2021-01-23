@@ -18,8 +18,8 @@ ___
     * Install the required dependencies
     * Clone the project repo code to the home directory
     * Enable the PiCamera and RealVNC modules
-    * Configure your Pi to initialize a vncserver on startup
-    * Reboot
+    * Display VNC server address for [VNC Viewer](https://www.realvnc.com/en/connect/download/viewer/)
+    * Reboot, enabling the VNC server
     > Note: Sometimes this code doesn't do anything for reasons beyond me. If it doesn't work at first, wait a minute and try again.
 
 ___
