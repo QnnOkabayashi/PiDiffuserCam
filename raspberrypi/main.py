@@ -10,10 +10,12 @@ if not os.path.isdir(captures_path):
 
 with PiCamera() as camera:
     camera.start_preview()
-    input("Press <enter> to stop")
+    while True:
+        user_input = input('Press <enter> to take a picture, or q+<enter> to quit: ')
+        if user_input == '':
+            label = datetime.now().strftime('%d/%m/%Y %H:%M:%S')
+            camera.capture(os.path.join(captures_path, f'{label}.png'))
+        elif user_input == 'q':
+            break
     camera.stop_preview()
-    # d = datetime.now()
-    # label = f'{d.year}-{d.month}-{d.day} at {d.hour}.{d.minute}.{d.second}'
-
-    # camera.capture(output=os.path.join(captures_path, f'{label}.png'))
 
