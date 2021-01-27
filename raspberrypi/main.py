@@ -10,7 +10,6 @@ if not os.path.isdir(captures_path):
 
 with PiCamera() as camera:
     camera.start_preview()
-    camera.color_effects = (128, 128)
     while True:
         user_input = input('Press <enter> to take a picture, or q+<enter> to quit: ')
         if user_input == '':
