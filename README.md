@@ -30,11 +30,26 @@ ___
     ```
     $ python3 main.py
     ```
-
 ___
-## Copying captured images to local machine via SSH
-Enter the following command from the terminal of the machine you want to copy images to, substituting your local destination path:
+## Copying captured images
+The `scp` command can be used to transfer files over SSH. The following command transfers images from the Raspberry Pi to your desktop (executed from your local shell):
 ```
-$ scp -rp pi@raspberrypi.local:/home/pi/PiDiffuserCam/raspberrypi/captures /local/destination/path/
+$ scp -rp pi@raspberrypi.local:/home/pi/PiDiffuserCam/raspberrypi/captures /Users/$(whoami)/Desktop
 ```
 > Note: This command will fail if no images have been captured
+
+___
+## 2D Reconstruction
+1. After transfering the images to your computer, convert them to `.tif` by renaming them.
+2. Clone the [tutorial code](https://github.com/Waller-Lab/DiffuserCam-Tutorial) repository into a Jupyter Notebook.
+2. Upload them to the Jupyter Notebook and edit the config block (shown below) by entering in the image file names:
+    ```python
+    psfname = "./psf_file_name_here.tif"
+    imgname = "./image_file_name_here.tif"
+    ```
+3. You can also change the number of iterations for tweaking the clarity:
+    ```python
+    # Number of iterations
+    iters = 5
+    ```
+4. Restart the kernel to execute script, and the reconstruction will display at the bottom.
