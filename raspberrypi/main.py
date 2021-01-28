@@ -8,8 +8,8 @@ if not os.path.isdir(captures_path):
 
 with PiCamera() as camera:
     camera.start_preview()
+    print('Type a file name and press <enter> to capture, or leave blank to quit')
     while True:
-        print('Type a file name and press <enter> to capture, or leave blank to quit')
         user_input = input('> ').strip()
         if user_input == '':
             break
